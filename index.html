@@ -1,1 +1,49 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>La mia pagina web</title>
+  <style>
+    /* Aggiungi eventuali stili CSS personalizzati qui */
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Contenuto dell'header -->
+  </header>
+
+  <main>
+    <!-- Contenuto principale della pagina -->
+    <button type="button" id="myButton">Clicca qui</button>
+
+    <div id="cardContainer">
+      <!-- Le cards verranno aggiunte qui dinamicamente -->
+    </div>
+  </main>
+
+  <footer>
+    <!-- Contenuto del footer -->
+  </footer>
+
+  <script>
+    // Aggiungi eventuali script JavaScript personalizzati qui
+    var button = document.getElementById('myButton');
+    var cardContainer = document.getElementById('cardContainer');
+
+    button.addEventListener('click', function() {
+      // Recupera i dati dal servizio esterno
+      var data = [5, 5, 4, 4, 7, 7];
+
+      // Rimuovi le cards esistenti
+      cardContainer.innerHTML = '';
+
+      // Aggiungi le nuove cards
+      data.forEach(function(cardData, index) {
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = 'Contenuto della card ' + (index + 1) + ': ' + cardData;
+        cardContainer.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
